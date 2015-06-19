@@ -1,0 +1,4 @@
+globals:
+  browser: false
+  by: false
+  element: false

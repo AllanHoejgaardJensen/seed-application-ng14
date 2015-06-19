@@ -1,0 +1,40 @@
+{
+  "name": "seed-application",
+  "description": "A starter project for AngularJS",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Nykredit/seed-application",
+  "license": "COMMERCIAL",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.4",
+    "angular-bootstrap": "~0.13",
+    "angular-fontawesome": "~0.3.0",
+    "angular-resource": "~1.4",
+    "angular-route": "~1.4",
+    "angular-sanitize": "~1.4",
+    "angular-touch": "~1.4",
+    "bootstrap-sass-official": "~3.3.0",
+    "jquery": "~2.1.1",
+    "modernizr": "https://github.com/Modernizr/Modernizr.git#~2.7.2",
+    "picturefill": "~2.3.1"
+  },
+  "overrides": {
+    "bootstrap-sass-official": {
+      "main": [
+        "**/*.{eot,svg,ttf,woff,woff2}"
+      ]
+    },
+    "modernizr": {
+      "main": [
+        "modernizr.js"
+      ]
+    }
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4",
+    "jasmine-jquery": "1.3.1"
+  },
+  "resolutions": {
+    "angular": "~1.4"
+  }
+}

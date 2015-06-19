@@ -1,0 +1,76 @@
+.expand {
+    height: 100%;
+    width: 100%;
+}
+
+.expand-block {
+    @extend .expand;
+    display: block;
+}
+
+/*
+ styles for providing an active feedback to the users using
+ application on touch devices, devices with keyboards and pointing devices
+*/
+.no-select {
+    @include vendor-prefix(user-select, none);
+    @include vendor-prefix(touch-callout, none);
+}
+
+.feedback {
+    @include vendor-prefix(box-shadow, (0px 0px 18px 10px $feedback-color));
+    position: relative;
+    z-index: 9999;
+}
+
+.touch-feedback {
+    @extend .feedback;
+    background-color: $feedback-color;
+}
+
+.touch-feedback:active {
+    @extend .feedback;
+    background-color: $feedback-color;
+    cursor: pointer;
+}
+
+.touch-feedback:hover {
+    background-color: $feedback-color;
+    cursor: pointer;
+}
+
+.touch-feedback:focus {
+     background-color: $feedback-color;
+     outline-color: $feedback-color;
+     cursor: pointer;
+ }
+
+/* style only on hover situations */
+.touch-feedback-on-active:hover {
+    background-color: $list-group-hover-bg;
+    text-decoration: none;
+}
+
+/* style only on active situations */
+.touch-feedback-on-active:active {
+    @extend .touch-feedback:active;
+    background-color: $feedback-color;
+}
+
+.touch-feedback-on-active:focus{
+    @extend .touch-feedback:active;
+    text-decoration: none;
+    outline-color: $feedback-color;
+    background-color: $feedback-color;
+}
+
+/* style only on active situations */
+.touch-feedback-on-active-box:active,
+.touch-feedback-on-active-box:hover {
+    background-color: $feedback-color;
+}
+
+.touch-feedback-by-keyboard {
+    background-color: $feedback-color;
+    cursor: pointer;
+}

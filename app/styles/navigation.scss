@@ -1,0 +1,109 @@
+@import "styles/feedback";
+/*
+ * navigation styles
+ */
+/* Needed for styling xs menu */
+.navbar-toggle {
+    margin-right: 20px;
+}
+
+/* AngularJS-Bootstrap component library (ui.bootstrap) */
+.nav, .pagination, .carousel, .panel-title a {
+    cursor: pointer;
+}
+
+/* navigation styles */
+.sidenav {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-shadow: 0 1px 0 #fff;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+}
+
+.sidebar .nav > li > a {
+    display: block;
+    color: #777;
+    padding: 5px 20px;
+}
+
+.sidebar .nav .nav {
+    margin-bottom: 8px;
+}
+
+.sidebar .nav .nav > li > a {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 30px;
+    font-size: 90%;
+}
+
+.sidebar .nav > .active > a,
+.sidebar .nav > .active:hover > a,
+.sidebar .nav > .active:focus > a {
+    font-weight: bold;
+    color: #23547c;
+    border-right: 1px solid #f8f8f8;
+    background-color: $feedback-color;
+}
+div.navbar-header > a.navbar-brand:active,
+.navbar-default .navbar-nav > li > a:active {
+    @extend .feedback;
+    background-color: $feedback-color;
+    display: block;
+    border-radius: 20px;
+    opacity: 0.6;
+}
+
+div.navbar-header > a.navbar-brand:hover,
+.navbar-default .navbar-nav > li > a:hover {
+    background-color: $feedback-color;
+}
+
+/*
+* styles for the search bar in menu
+*/
+@media (min-width:0px) and (max-width:$grid-float-breakpoint-x-over) {
+    .navbar {
+        display: table-row;
+        width: 100%;
+    }
+
+    .navbar-brand,
+    .navbar-search,
+    .navbar-toggle {
+        display: table-cell;
+        float: right;
+        margin-left: 0.2em;
+    }
+
+    .navbar-collapse {
+        margin-top: 50px;
+    }
+
+    .navbar-search {
+        float: right;
+        padding: 7.5px 10px;
+    }
+}
+
+@media (max-width:400px) {
+    .navbar-search {
+        max-width: 8em;
+        float: right;
+        padding: 7.5px 10px;
+    }
+}
+
+@media (min-width:$grid-float-breakpoint-max) {
+    .navbar-search {
+        float: right;
+        margin: 7.5px 10px;
+    }
+}
+
+.navbar-stay-right {
+    float: right;
+}

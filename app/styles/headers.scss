@@ -1,0 +1,12 @@
+$header-primary-color: black !default;
+$header-secondary-color : gray !default;
+
+.header-dual {
+  color: $header-primary-color;
+}
+
+.header-dual > span {
+  font-size: 65%;
+  color: $header-secondary-color;
+  
+}

@@ -1,0 +1,46 @@
+
+/*
+ * Customizations for Bootstrap
+ *  - these are set before the import of bootstrap
+*/
+
+$app-background-color: #777;
+$app-text-color: #fff;
+$app-text-secondary-color: #888;
+$app-text-tertiary-color: #f5f5f5;
+$app-notice-text-color: #222555;
+
+
+$jumbotron-bg: $app-background-color;
+$jumbotron-color: $app-text-color;
+
+/* Navbar collapse */
+$grid-float-breakpoint:     62em !default;
+$grid-float-breakpoint-max: ($grid-float-breakpoint - 0.1) !default;
+$grid-float-breakpoint-x-over: ($grid-float-breakpoint - 0.09) !default;
+$navbar-collapse-max-height: 40em;
+$navbar-margin-bottom : 0.2em;
+
+$icon-font-path: "/fonts/"; // Bootstrap normally tries to load fonts from "../fonts/"
+
+
+/* font color settings */
+$header-primary-color: #333333;
+$header-secondary-color : #888888;
+$text-color: $app-text-color;
+
+$box-background-color: #ffffff;
+$box-text-color: black;
+$box-text-firstletter-color: lighten($app-notice-text-color, 12%);
+$box-table-body-icon-color: lighten($app-notice-text-color, 12%);
+
+
+$feedback-color: darken($text-color, 8%);
+$finger-size: 3.5em;
+
+$info-color: $app-notice-text-color;
+$footer-color: $app-text-tertiary-color;
+$touch-row-height: 4em;
+$touch-row-top-padding: 1.5em;
+
+

@@ -1,0 +1,75 @@
+$finger-size: 4em !default;
+$box-background-color: rgb(255, 255, 255) !default;
+$box-text-color: rgb(136, 136, 136) !default;
+$box-text-firstletter-color: darken($box-text-color, 75%) !default;
+$box-table-header-text-color: darken($box-text-color, 85%) !default;
+$box-table-body-text-color: lighten($box-text-color, 45%) !default;
+$box-table-body-icon-color: lighten($box-text-color, 45%) !default;
+$box-table-hover-color: lighten($box-text-color, 83.7%) !default;
+
+
+/* override feedback variables*/
+$feedback-color: $box-table-body-text-color !default;
+
+@import "styles/feedback";
+
+.box {
+  @include vendor-prefix(background-clip, border-box);
+  @include vendor-prefix(background-origin, padding-box);
+  @include vendor-prefix(background-size, auto);
+  @include vendor-prefix(box-shadow, ((rgba(0, 0, 0, 0.298039) 0px 1px 4px 0px), (rgba(0, 0, 0, 0.0980392) 0px 0px 40px 0px inset)));
+  @include vendor-prefix(backface-visibility, visible);
+  background-color: $box-background-color;
+  color: $box-text-color;
+  height: 100%;
+  display: block;
+}
+
+.text-box {
+  @extend .box;
+  padding: 0.75em;
+  margin-bottom: 0.5em;
+}
+
+.text-box:active {
+  display: block;
+  @include vendor-prefix(box-shadow, ((rgba(0, 0, 0, 0.698039) 0px 1px 4px 0px), (rgba(0, 0, 0, 0.0920392) 0px 0px 40px 0px inset)));
+}
+
+.text-box > p:first-letter {
+  color: $box-text-firstletter-color;
+  font-size: larger;
+  font-weight: bolder;
+  margin: 0.05em;
+}
+
+.table-box {
+  @extend .box;
+  padding: 0.85em;
+  margin-top: 1em;
+}
+
+.table-box > table {
+  border: 0;
+  margin-top: 0.25em;
+  margin-bottom: 0;
+}
+
+.table-box > table > thead {
+  color: $box-table-header-text-color;
+}
+
+.table-box > table > tbody > tr {
+  @extend .touch-feedback-on-active;
+}
+
+.table-box > table > tbody > tr > td {
+  height: $finger-size;
+  vertical-align: middle;
+  color: $box-table-body-text-color;
+}
+
+.table-box > table > tbody > tr > td:first-child > i {
+  padding-left: 0.05em;
+  color: $box-table-body-icon-color;
+}

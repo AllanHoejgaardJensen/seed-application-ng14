@@ -1,0 +1,168 @@
+@import "styles/variables";
+
+@import "bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap";
+
+/*import mixins */
+@import "styles/mixins";
+
+/* import subsections and components styles */
+@import "styles/box";
+@import "styles/navigation";
+@import "styles/feedback";
+@import "styles/headers";
+
+@import "sections/portfolio/portfolio";
+
+/* Setting up styles to ensure room for top menu and footer */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body > .container {
+    /* Padding to ensure space for top menu and fixed footer */
+    padding: 60px 15px 20px;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 40px;
+    background-color: $footer-color;
+}
+
+#footer > .container {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.limit-text-width {
+    overflow: hidden;
+    white-space: nowrap;
+    @include vendor-prefix(text-overflow, ellipsis);
+}
+
+.adjust-right {
+    float: right;
+}
+
+/* ng styles */
+.ng-hide {
+    display: none !important;
+}
+
+/* A little styling for the d3 graphs */
+.axis path {
+    display: none;
+}
+
+.axis text {
+    font-size: 80%;
+}
+
+/* A list or table of links that fill the list items or table cells entirely */
+
+ul.link-list {
+    border-collapse: collapse;
+    display: table;
+    width: 100%;
+}
+
+ul.link-list > li {
+    padding: 0;
+    display: table-row;
+}
+
+ul.link-list > li > a {
+    @extend .expand-block;
+    border: 1px solid $list-group-border;
+    display: table-cell;
+    height: $touch-row-height;
+    font-size: larger;
+    padding-left: 3em;
+    text-indent: -1.2em;
+    vertical-align: middle;
+}
+
+ul.link-list > li > a > span.icon {
+    padding-right: 1em;
+    color: $info-color;
+}
+
+ul.link-list > li > a > span {
+    padding-right: 1em;
+    font-weight: bolder;
+}
+
+ul.link-list > li > a > p {
+    padding-right: 1em;
+    font-weight: normal;
+}
+
+/* A link that fills its parent element */
+a.touch-link {
+    @extend .expand-block;
+    @include vendor-prefix(text-overflow, ellipsis);
+}
+
+a.touch-link:focus,
+a.touch-link:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* styles for inserting icons in inputs*/
+.inner-addon {
+    position: relative;
+}
+
+.inner-addon .glyphicon {
+    position: absolute;
+    padding: 8px;
+    pointer-events: none;
+}
+
+.inner-addon-left .glyphicon  {
+    left:  0px;
+}
+
+.inner-addon-right .glyphicon {
+    right: 0px;
+}
+
+.inner-addon-left input  {
+    padding-left:  30px;
+}
+
+.inner-addon-right input {
+    padding-right: 30px;
+}
+
+/* welcome */
+#welcome .jumbotron > h1 {
+    text-align: center;
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb,
+    0 4px 0 #b9b9b9, 0 5px 0 #aaa,
+    0 6px 1px rgba(0,0,0,.1),
+    0 0 5px rgba(0,0,0,.1),
+    0 1px 3px rgba(0,0,0,.3),
+    0 3px 5px rgba(0,0,0,.2),
+    0 5px 10px rgba(0,0,0,.25),
+    0 10px 10px rgba(0,0,0,.2),
+    0 20px 20px rgba(0,0,0,.15);
+    margin: 1em;
+    font-size: 3.2em;
+}
+
+#welcome .jumbotron > picture {
+    float: right;
+    padding: 0.05em;
+    
+}
+
+#welcome .jumbotron > p {
+    color: rgba(172, 166, 167, 0.62);
+    text-align: right;
+}

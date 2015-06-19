@@ -1,0 +1,9 @@
+env:
+  node: true
+
+rules:
+  no-console: 0 # disallow use of console - use logging library instead
+  strict: [2, "global"] # controls location of Use Strict Directives
+
+        
+        

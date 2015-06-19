@@ -1,0 +1,28 @@
+<div id="portfolio">
+    <h1 class="header-dual">Portfolio <span> - example</span></h1>
+    <div class="text-box" title="a litte story about the example">
+        <p>Portfolio included as an example in seed.</p>
+    </div>
+
+    <div class="table-box">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Amount</th>
+                    <th class="hidden-xs">Remarks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="entry in vm.portfolio">
+                    <td><fa name="{{ {ba: 'barcode', ca: 'lock', da: 'euro', la: 'bar-chart', sa: 'signal'}[entry.type] }}"
+                            title="{{ {ba: 'Budget Account', ca: 'Equalizer Account', da: 'Debit Account', la: 'Loan', sa: 'Savings Account'}[entry.type] }}"></fa></td>
+                    <td>{{entry.name}}</td>
+                    <td ng-class="{{entry.balance < 0}} ? 'red' : 'normal'">{{entry.balance}} - {{entry.balance < 0}}</td>
+                    <td class="hidden-xs pale">{{entry.remark}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
