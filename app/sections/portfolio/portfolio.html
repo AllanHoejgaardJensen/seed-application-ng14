@@ -19,7 +19,7 @@
                     <td><fa name="{{ {ba: 'barcode', ca: 'lock', da: 'euro', la: 'bar-chart', sa: 'signal'}[entry.type] }}"
                             title="{{ {ba: 'Budget Account', ca: 'Equalizer Account', da: 'Debit Account', la: 'Loan', sa: 'Savings Account'}[entry.type] }}"></fa></td>
                     <td>{{entry.name}}</td>
-                    <td ng-class="{{entry.balance < 0}} ? 'red' : 'normal'">{{entry.balance}} - {{entry.balance < 0}}</td>
+                    <td ng-class="{{entry.balance < 0}} ? 'red' : 'normal'">{{entry.balance}}</td>
                     <td class="hidden-xs pale">{{entry.remark}}</td>
                 </tr>
             </tbody>
