@@ -1,8 +1,6 @@
-(function () {
-    'use strict';
-    angular.module('seed.portfolio.fusion')
-        .controller('FusionPortfolioController', function (FusionPortfolioService) {
-            var vm = this;
-            vm.portfolio = FusionPortfolioService.getPortfolio();
-        });
-}());
+angular.module('seed.portfolio.fusion')
+    .controller('FusionPortfolioController', function (FusionPortfolioService) {
+        'use strict';
+        var vm = this;
+        vm.portfolio = FusionPortfolioService.getPortfolio();
+    });
