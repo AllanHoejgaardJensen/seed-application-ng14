@@ -1,10 +1,10 @@
-.expand {
+%expand {
     height: 100%;
     width: 100%;
 }
 
-.expand-block {
-    @extend .expand;
+%expand-block {
+    @extend %expand;
     display: block;
 }
 

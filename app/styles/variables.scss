@@ -1,30 +1,33 @@
-
-/*
- * Customizations for Bootstrap
- *  - these are set before the import of bootstrap
-*/
+//  Customizations for Bootstrap
+// - these are set before the import of bootstrap
 
 $app-background-color: #777;
 $app-text-color: #fff;
 $app-text-secondary-color: #888;
 $app-text-tertiary-color: #f5f5f5;
 $app-notice-text-color: #222555;
-
+$app-dark-red: #993333;
+$app-pale: #add8ee;
+$app-front-logo-lightcolor: #c9c9c9;
+$app-front-logo-color: #b9b9b9;
+$app-shadow-lightgray: #ccc;
+$app-shadow-mediumgray: #bbb;
+$app-shadow-darkergray: #aaa;
 
 $jumbotron-bg: $app-background-color;
 $jumbotron-color: $app-text-color;
 
-/* Navbar collapse */
+// Navbar collapse
 $grid-float-breakpoint:     62em !default;
 $grid-float-breakpoint-max: ($grid-float-breakpoint - 0.1) !default;
 $grid-float-breakpoint-x-over: ($grid-float-breakpoint - 0.09) !default;
 $navbar-collapse-max-height: 40em;
 $navbar-margin-bottom : 0.2em;
 
-$icon-font-path: "/fonts/"; // Bootstrap normally tries to load fonts from "../fonts/"
+$icon-font-path: '/fonts/'; // Bootstrap normally tries to load fonts from "../fonts/"
 
 
-/* font color settings */
+// font color settings
 $header-primary-color: #333333;
 $header-secondary-color : #888888;
 $text-color: $app-text-color;

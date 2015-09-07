@@ -1,4 +1,4 @@
-@import "styles/feedback";
+@import 'styles/feedback';
 /*
  * navigation styles
  */
@@ -48,6 +48,7 @@
     border-right: 1px solid #f8f8f8;
     background-color: $feedback-color;
 }
+
 div.navbar-header > a.navbar-brand:active,
 .navbar-default .navbar-nav > li > a:active {
     @extend .feedback;

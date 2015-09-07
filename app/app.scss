@@ -1,59 +1,63 @@
-@import "styles/variables";
+@import 'styles/variables';
 
-@import "bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap";
+@import 'bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap';
 
-/*import mixins */
-@import "styles/mixins";
+// import mixins
+@import 'styles/mixins';
 
-/* import subsections and components styles */
-@import "styles/box";
-@import "styles/navigation";
-@import "styles/feedback";
-@import "styles/headers";
+// import subsections and components styles
+@import 'styles/box';
+@import 'styles/navigation';
+@import 'styles/feedback';
+@import 'styles/headers';
 
-@import "sections/portfolio/portfolio";
+@import 'sections/portfolio/portfolio';
 
-/* Setting up styles to ensure room for top menu and footer */
+
+// Setting up styles to ensure room for top menu and footer
 html {
-    position: relative;
     min-height: 100%;
+    position: relative;
 }
 
-body > .container {
-    /* Padding to ensure space for top menu and fixed footer */
-    padding: 60px 15px 20px;
+body {
+    > .container {
+        // Padding to ensure space for top menu and fixed footer
+        padding: 60px 15px 20px;
+    }
+
+    > .footer {
+        background-color: $footer-color;
+        bottom: 0;
+        // Set the fixed height of the footer here
+        height: 40px;
+        position: absolute;
+        width: 100%;
+
+        > .container {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
 }
 
-#footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    /* Set the fixed height of the footer here */
-    height: 40px;
-    background-color: $footer-color;
-}
-
-#footer > .container {
-    padding-right: 15px;
-    padding-left: 15px;
-}
 
 .limit-text-width {
+    @include vendor-prefix(text-overflow, ellipsis);
     overflow: hidden;
     white-space: nowrap;
-    @include vendor-prefix(text-overflow, ellipsis);
 }
 
 .adjust-right {
     float: right;
 }
 
-/* ng styles */
+// ng styles
 .ng-hide {
     display: none !important;
 }
 
-/* A little styling for the d3 graphs */
+// A little styling for the d3 graphs
 .axis path {
     display: none;
 }
@@ -62,107 +66,107 @@ body > .container {
     font-size: 80%;
 }
 
-/* A list or table of links that fill the list items or table cells entirely */
-
-ul.link-list {
+// A list or table of links that fill the list items or table cells entirely
+.link-list {
     border-collapse: collapse;
     display: table;
     width: 100%;
+
+    > li {
+        display: table-row;
+        padding: 0;
+
+        > a {
+            @extend %expand-block;
+            border: 1px solid $list-group-border;
+            display: table-cell;
+            font-size: larger;
+            height: $touch-row-height;
+            padding-left: 3em;
+            text-indent: -1.2em;
+            vertical-align: middle;
+
+            > span {
+                font-weight: bolder;
+                padding-right: 1em;
+
+                .icon {
+                    color: $info-color;
+                }
+            }
+
+            > p {
+                font-weight: normal;
+                padding-right: 1em;
+            }
+        }
+
+    }
 }
 
-ul.link-list > li {
-    padding: 0;
-    display: table-row;
-}
-
-ul.link-list > li > a {
-    @extend .expand-block;
-    border: 1px solid $list-group-border;
-    display: table-cell;
-    height: $touch-row-height;
-    font-size: larger;
-    padding-left: 3em;
-    text-indent: -1.2em;
-    vertical-align: middle;
-}
-
-ul.link-list > li > a > span.icon {
-    padding-right: 1em;
-    color: $info-color;
-}
-
-ul.link-list > li > a > span {
-    padding-right: 1em;
-    font-weight: bolder;
-}
-
-ul.link-list > li > a > p {
-    padding-right: 1em;
-    font-weight: normal;
-}
-
-/* A link that fills its parent element */
-a.touch-link {
-    @extend .expand-block;
+// A link that fills its parent element
+.touch-link {
+    @extend %expand-block;
     @include vendor-prefix(text-overflow, ellipsis);
+
+    &:focus,
+    &:hover {
+        cursor: pointer;
+        text-decoration: none;
+    }
 }
 
-a.touch-link:focus,
-a.touch-link:hover {
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* styles for inserting icons in inputs*/
+// styles for inserting icons in inputs
 .inner-addon {
     position: relative;
+
+    .glyphicon {
+        padding: 8px;
+        pointer-events: none;
+        position: absolute;
+    }
 }
 
-.inner-addon .glyphicon {
-    position: absolute;
-    padding: 8px;
-    pointer-events: none;
-}
-
-.inner-addon-left .glyphicon  {
-    left:  0px;
+.inner-addon-left .glyphicon {
+    left: 0;
 }
 
 .inner-addon-right .glyphicon {
-    right: 0px;
+    right: 0;
 }
 
-.inner-addon-left input  {
-    padding-left:  30px;
+.inner-addon-left input {
+    padding-left: 30px;
 }
 
 .inner-addon-right input {
     padding-right: 30px;
 }
 
-/* welcome */
-#welcome .jumbotron > h1 {
-    text-align: center;
-    text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb,
-    0 4px 0 #b9b9b9, 0 5px 0 #aaa,
-    0 6px 1px rgba(0,0,0,.1),
-    0 0 5px rgba(0,0,0,.1),
-    0 1px 3px rgba(0,0,0,.3),
-    0 3px 5px rgba(0,0,0,.2),
-    0 5px 10px rgba(0,0,0,.25),
-    0 10px 10px rgba(0,0,0,.2),
-    0 20px 20px rgba(0,0,0,.15);
-    margin: 1em;
-    font-size: 3.2em;
-}
+// welcome
+#welcome .jumbotron {
+    > h1 {
+        font-size: 3.2em;
+        margin: 1em;
+        text-align: center;
+        text-shadow: 0 1px 0 $app-shadow-lightgray, 0 2px 0 $app-front-logo-lightcolor, 0 3px 0 $app-shadow-mediumgray,
+        0 4px 0 $app-front-logo-color, 0 5px 0 $app-shadow-darkergray,
+        0 6px 1px rgba(0, 0, 0, .1),
+        0 0 5px rgba(0, 0, 0, .1),
+        0 1px 3px rgba(0, 0, 0, .3),
+        0 3px 5px rgba(0, 0, 0, .2),
+        0 5px 10px rgba(0, 0, 0, .25),
+        0 10px 10px rgba(0, 0, 0, .2),
+        0 20px 20px rgba(0, 0, 0, .15);
+    }
 
-#welcome .jumbotron > picture {
-    float: right;
-    padding: 0.05em;
-    
-}
+    > picture {
+        float: right;
+        padding: .05em;
+        }
 
-#welcome .jumbotron > p {
-    color: rgba(172, 166, 167, 0.62);
-    text-align: right;
+    > p {
+        color: rgba(172, 166, 167, .62);
+        text-align: right;
+    }
 }
