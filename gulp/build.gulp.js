@@ -75,7 +75,9 @@ gulp.task('images', function () {
         .pipe(size());
 });
 
-gulp.task('build', ['bower', 'js', 'images', 'fonts', 'build-styles', 'partials', 'test', 'lint-checkstyle'], function () {
+gulp.task('build', ['bower', 'js', 'images', 'fonts',
+    'build-styles', 'partials', 'test',
+    'lint-checkstyle', 'lint-scss'], function () {
     var assets = useref.assets();
 
     return gulp.src('app/index.html')

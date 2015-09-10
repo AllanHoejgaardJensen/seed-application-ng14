@@ -1,13 +1,14 @@
-@import "styles/box";
+@import 'styles/box';
+@import 'styles/variables';
 
 .red {
-  color: #993333 !important;
+    color: $app-dark-red !important;
 }
 
 .normal {
-  color: $box-table-header-text-color !important;
+    color: $box-table-header-text-color !important;
 }
 
 .pale {
-  color : #add8ee !important;;
+    color: $app-pale !important;
 }
