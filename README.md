@@ -11,6 +11,9 @@ A simple seed application based on Angular 1.4
 ##Before it runs:
  - make sure you have node installed (0.10.38)
  - make sure that you have git
+ - make sure you have have gems
+ - gem install scss-lint
+ - 
  
 ##Set up
  - type "npm install" on the command line
